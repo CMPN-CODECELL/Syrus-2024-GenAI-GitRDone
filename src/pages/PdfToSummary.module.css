@@ -30,9 +30,10 @@
   border-radius: 4px;
 } */
 
-/* .body{
-  position: fixed;
-} */
+.body{
+  /* position: fixed; */
+  overflow: hidden;
+}
 
 .container {
   max-width: 600px;
@@ -265,4 +266,15 @@ a{
 .faltu{
   visibility: hidden;
   opacity: 0;
+}
+
+.nav-element-summary{
+  margin-right: 34px;
+  
+  background-color: #0056b3;
+  padding: 5px ; /* Adjust padding as needed */
+  margin: 5px;
+  color: white;
+  border-radius: 10%;
+  text-decoration: none; /* Added for consistency */
 }

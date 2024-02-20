@@ -116,7 +116,7 @@ function PdfToSummary() {
           <Link to={"/"} className={styles["nav-element"]}>
             Home
           </Link>
-          <Link to={"/pdf-to-summary"} className={styles["nav-element"]}>
+          <Link to={"/pdf-to-summary"} className={styles["nav-element-summary"]}>
             Summary
           </Link>
         </nav>
