@@ -19,7 +19,7 @@ function PdfToSummary() {
       formData.append("file", file);
 
       try {
-        const response = await fetch("http://localhost:5001/upload", {
+        const response = await fetch("http://localhost:5001/upload", { //update your path
           method: "POST",
           body: formData,
         });
@@ -99,6 +99,12 @@ function PdfToSummary() {
   };
 
   return (
+    <>
+    <div>
+      <h1>
+        Generate Summary from Pdf
+      </h1>
+    </div>
     <div className={styles.container}>
       <input
         type="file"
@@ -123,8 +129,7 @@ function PdfToSummary() {
       )}
       {summary && <div className={styles.summary}>Summary: {summary}</div>}
     </div>
+    </>
   );
 }
-
-
-
+export default PdfToSummary;
