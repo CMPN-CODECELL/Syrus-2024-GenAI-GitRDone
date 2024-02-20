@@ -1,5 +1,6 @@
 .app {
   font-family: "Arial", sans-serif;
+  
 }
 
 .header {
@@ -113,4 +114,21 @@
 .feature-description {
   font-size: 1rem;
   margin: 0; /* Remove default margin */
+}
+
+.nav-element{
+  background-color: #0056b3;
+  padding: 4px;
+  margin: 5px;
+  color: white;
+  border-radius: 10%;
+}
+
+.summary-btn{
+  background-color: #0056b3;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  border-radius: 10%;
+  display: inline;
 }

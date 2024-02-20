@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./PdfToSummary.module.css";
+import { Link } from "react-router-dom";
 
 function PdfToSummary() {
   const [pdfText, setPdfText] = useState("");
@@ -19,7 +20,8 @@ function PdfToSummary() {
       formData.append("file", file);
 
       try {
-        const response = await fetch("http://localhost:5001/upload", { //update your path
+        const response = await fetch("http://localhost:5001/upload", {
+          //update your path
           method: "POST",
           body: formData,
         });
@@ -99,37 +101,55 @@ function PdfToSummary() {
   };
 
   return (
-    <>
-    <div>
-      <h1>
-        Generate Summary from Pdf
-      </h1>
-    </div>
-    <div className={styles.container}>
-      <input
-        type="file"
-        accept=".pdf"
-        onChange={handleFileChange}
-        className={styles.fileInput}
-      />
-      <button onClick={handleExtractText} className={styles.button}>
-        Extract Text
-      </button>
-      <button onClick={generateSummary} className={styles.button}>
-        Generate Summary
-      </button>
-      {isPlaying ? (
-        <button onClick={stopSummaryAudio} className={styles.button}>
-          Stop Audio
+    <div className={styles.body}>
+      <header className={styles.header}>
+        <Link to={"/"} className={styles["cta-button"]}>
+          <img
+            alt="Mountain"
+            className={styles["logo-icon"]}
+            src="/images/logo.png"
+          />
+          <span className={styles["logo-text"]}>Git-R-Done</span>
+        </Link>
+        <a className={styles.logo} href="#"></a>
+        <nav className={styles.nav}>
+          <Link to={"/"} className={styles["nav-element"]}>
+            Home
+          </Link>
+          <Link to={"/pdf-to-summary"} className={styles["nav-element"]}>
+            Summary
+          </Link>
+        </nav>
+      </header>
+      <div>
+        <h1 className="faltu" style={{opacity: '0'}}>efkgbwrbgoiebg</h1>
+        <h1>Generate Summary from Pdf</h1>
+      </div>
+      <div className={styles.container}>
+        <input
+          type="file"
+          accept=".pdf"
+          onChange={handleFileChange}
+          className={styles.fileInput}
+        />
+        <button onClick={handleExtractText} className={styles.ExtractTextBtn}>
+          Extract Text
         </button>
-      ) : (
-        <button onClick={playSummaryAudio} className={styles.button}>
-          Play Audio
+        <button onClick={generateSummary} className={styles.button}>
+          Generate Summary
         </button>
-      )}
-      {summary && <div className={styles.summary}>Summary: {summary}</div>}
+        {isPlaying ? (
+          <button onClick={stopSummaryAudio} className={styles.button}>
+            Stop Audio
+          </button>
+        ) : (
+          <button onClick={playSummaryAudio} className={styles.button}>
+            Play Audio
+          </button>
+        )}
+        {summary && <div className={styles.summary}>Summary: {summary}</div>}
+      </div>
     </div>
-    </>
   );
 }
 export default PdfToSummary;

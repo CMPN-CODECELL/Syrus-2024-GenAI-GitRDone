@@ -8,14 +8,17 @@ export default function Component() {
           <img
             alt="Mountain"
             className={styles["logo-icon"]}
-            src="/images/logo.jpg"
+            src="/images/logo.png"
           />
           <span className={styles["logo-text"]}>Git-R-Done</span>
         </a>
         <nav className={styles.nav}>
-          <a className={styles["nav-link"]} href="#">
+          <Link to={"/"} className={styles["nav-element"]}>
             Home
-          </a>
+          </Link>
+          <Link to={"/pdf-to-summary"} className={styles["nav-element"]}>
+            Summary
+          </Link>
         </nav>
       </header>
       <main className={styles.main}>
@@ -32,12 +35,12 @@ export default function Component() {
                 retention. Elevate your educational journey and embrace the
                 power of intelligent learning with us.
               </p>
-              <a className={styles["cta-link"]} href="#">
+              {/* <a className={styles["cta-link"]} href="#">
                 Get Started
               </a>
               <a className={styles["cta-link"]} href="#">
                 Learn more
-              </a>
+              </a> */}
             </div>
           </div>
         </section>
@@ -72,9 +75,12 @@ function FeatureCard({ title, description, imageSrc, link, sectionNumber }) {
             <div className={styles["text-content"]}>
               <h3 className={styles["feature-title"]}>{title}</h3>
               <p className={styles["feature-description"]}>{description}</p>
-              <Link to={link} className={styles["cta-button"]}>
-                Open Link
+              <span>
+
+              <Link to={link} className={styles["summary-btn"]}>
+                Summary
               </Link>
+              </span>
             </div>
             <img
               src={imageSrc}
