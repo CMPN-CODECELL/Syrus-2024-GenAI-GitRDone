@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import styles from "./Component.module.css";
+import { Link } from "react-router-dom";
 
 const API_KEY = "AIzaSyDu5m5zm0dG0x62imyoytotf8j5hfVIHxw"; // Replace with your API key
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -43,11 +45,40 @@ function GeminiProVision() {
   };
 
   return (
-    <div>
-      <input type="file" multiple ref={fileInputRef} />
-      <button onClick={run}>Generate Content</button>
-      <>{info}</>
-    </div>
+    <>
+      <header className={styles.header}>
+          <a className={styles.logo} href="#">
+            <img
+              alt="Mountain"
+              className={styles["logo-icon"]}
+              src="/images/logo.png"
+            />
+            <span className={styles["logo-text"]}>Git-R-Done</span>
+          </a>
+          <nav className={styles.nav}>
+            <Link to={"/"} className={styles["nav-element"]}>
+              Home
+            </Link>
+            <Link to={"/pdf-to-summary"} className={styles["nav-element"]}>
+              Summary
+            </Link>
+            <Link to={"/mindmap"} className={styles["nav-element"]}>
+              Mind Map
+            </Link>
+            <Link to={"/Questionaire"} className={styles["nav-element"]}>
+              Questionaire
+            </Link>
+            <Link to={"/GeminiProVision"} className={styles["nav-element"]}>
+              Analyze Image
+            </Link>
+          </nav>
+        </header>
+      <div>
+        <input type="file" multiple ref={fileInputRef} />
+        <button onClick={run}>Generate Content</button>
+        <>{info}</>
+      </div>
+    </>
   );
 }
 

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
+import styles from "./GeminiProVision.module.css"
+import { Link } from "react-router-dom";
 
 function Mindmap() {
   const mindMapContainerRef = useRef();
@@ -268,6 +270,33 @@ function Mindmap() {
 
   return (
     <div>
+      <header className={styles.header}>
+          <a className={styles.logo} href="#">
+            <img
+              alt="Mountain"
+              className={styles["logo-icon"]}
+              src="/images/logo.png"
+            />
+            <span className={styles["logo-text"]}>Git-R-Done</span>
+          </a>
+          <nav className={styles.nav}>
+            <Link to={"/"} className={styles["nav-element"]}>
+              Home
+            </Link>
+            <Link to={"/pdf-to-summary"} className={styles["nav-element"]}>
+              Summary
+            </Link>
+            <Link to={"/mindmap"} className={styles["nav-element"]}>
+              Mind Map
+            </Link>
+            <Link to={"/Questionaire"} className={styles["nav-element"]}>
+              Questionaire
+            </Link>
+            <Link to={"/GeminiProVision"} className={styles["nav-element"]}>
+              Analyze Image
+            </Link>
+          </nav>
+        </header>
       <input type="file" accept=".pdf" onChange={handleFileChange} />
       <button onClick={handleExtractText}>Extract Text</button>
       {pdfText && <div>{pdfText}</div>}

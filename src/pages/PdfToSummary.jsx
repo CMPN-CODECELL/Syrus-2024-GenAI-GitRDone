@@ -103,24 +103,32 @@ function PdfToSummary() {
   return (
     <div className={styles.body}>
       <header className={styles.header}>
-        <Link to={"/"} className={styles["cta-button"]}>
-          <img
-            alt="Mountain"
-            className={styles["logo-icon"]}
-            src="/images/logo.png"
-          />
-          <span className={styles["logo-text"]}>Git-R-Done</span>
-        </Link>
-        <a className={styles.logo} href="#"></a>
-        <nav className={styles.nav}>
-          <Link to={"/"} className={styles["nav-element"]}>
-            Home
-          </Link>
-          <Link to={"/pdf-to-summary"} className={styles["nav-element-summary"]}>
-            Summary
-          </Link>
-        </nav>
-      </header>
+          <a className={styles.logo} href="#">
+            <img
+              alt="Mountain"
+              className={styles["logo-icon"]}
+              src="/images/logo.png"
+            />
+            <span className={styles["logo-text"]}>Git-R-Done</span>
+          </a>
+          <nav className={styles.nav}>
+            <Link to={"/"} className={styles["nav-element"]}>
+              Home
+            </Link>
+            <Link to={"/pdf-to-summary"} className={styles["nav-element"]}>
+              Summary
+            </Link>
+            <Link to={"/mindmap"} className={styles["nav-element"]}>
+              Mind Map
+            </Link>
+            <Link to={"/Questionaire"} className={styles["nav-element"]}>
+              Questionaire
+            </Link>
+            <Link to={"/GeminiProVision"} className={styles["nav-element"]}>
+              Analyze Image
+            </Link>
+          </nav>
+        </header>
       <div>
         <h1 className="faltu" style={{opacity: '0'}}>efkgbwrbgoiebg</h1>
         <h1>Generate Summary from Pdf</h1>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Questionaire.module.css";
+import { Link } from "react-router-dom";
 
 function Questionaire() {
   const [pdfText, setPdfText] = useState("");
@@ -187,9 +188,35 @@ function Questionaire() {
   const handleSubmit = () => {
     setShowResults(true);
   };
-
   return (
     <>
+    <header className={styles.header}>
+          <a className={styles.logo} href="#">
+            <img
+              alt="Mountain"
+              className={styles["logo-icon"]}
+              src="/images/logo.png"
+            />
+            <span className={styles["logo-text"]}>Git-R-Done</span>
+          </a>
+          <nav className={styles.nav}>
+            <Link to={"/"} className={styles["nav-element"]}>
+              Home
+            </Link>
+            <Link to={"/pdf-to-summary"} className={styles["nav-element"]}>
+              Summary
+            </Link>
+            <Link to={"/mindmap"} className={styles["nav-element"]}>
+              Mind Map
+            </Link>
+            <Link to={"/Questionaire"} className={styles["nav-element"]}>
+              Questionaire
+            </Link>
+            <Link to={"/GeminiProVision"} className={styles["nav-element"]}>
+              Analyze Image
+            </Link>
+          </nav>
+        </header>
       <div>
         <h1>Generate Questionaire from Pdf</h1>
       </div>

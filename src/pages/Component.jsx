@@ -19,6 +19,15 @@ export default function Component() {
           <Link to={"/pdf-to-summary"} className={styles["nav-element"]}>
             Summary
           </Link>
+          <Link to={"/mindmap"} className={styles["nav-element"]}>
+            Mind Map
+          </Link>
+          <Link to={"/Questionaire"} className={styles["nav-element"]}>
+            Questionaire
+          </Link>
+          <Link to={"/GeminiProVision"} className={styles["nav-element"]}>
+            Analyze Image
+          </Link>
         </nav>
       </header>
       <main className={styles.main}>
@@ -54,6 +63,20 @@ export default function Component() {
                 imageSrc="/images/pdf-to-summary.png"
                 sectionNumber={1}
                 link="/pdf-to-summary"
+              />
+              <FeatureCard
+                title="Generate Mindmap to visualise key concepts and their relationships"
+                description="Unveil the essence of any document with a click – Generate insightful summaries from PDFs effortlessly!."
+                imageSrc="/images/pdf-to-summary.png"
+                sectionNumber={1}
+                link="/mindmap"
+              />
+              <FeatureCard
+                title="Generate questionaire to test your knowledge about the Topic"
+                description="Unveil the essence of any document with a click – Generate insightful summaries from PDFs effortlessly!."
+                imageSrc="/images/pdf-to-summary.png"
+                sectionNumber={1}
+                link="/questionaire"
               />
             </div>
           </div>
