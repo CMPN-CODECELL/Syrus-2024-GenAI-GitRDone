@@ -102,7 +102,7 @@ function Questionaire() {
             },....].Note dont give json object I want array consisting of objects`,
         },
       ],
-      max_tokens: 350,
+      max_tokens: 450,
       temperature: 0.7,
     };
 
@@ -112,7 +112,7 @@ function Questionaire() {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer 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", // Replace with your OpenAI API key
+            "Bearer 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", // Replace with your OpenAI API key
         },
         body: JSON.stringify(requestData),
       });

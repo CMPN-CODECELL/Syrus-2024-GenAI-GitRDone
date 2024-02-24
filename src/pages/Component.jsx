@@ -58,25 +58,36 @@ export default function Component() {
             <h2 className={styles.title}>Our Main Features</h2>
             <div className={styles["feature-grid"]}>
               <FeatureCard
-                title="Generate Pdf To summary"
-                description="Unveil the essence of any document with a click – Generate insightful summaries from PDFs effortlessly!."
+                title="Summary Generation:"
+                description="Unveil the essence of any document with a click - Generate insightful summaries from PDFs effortlessly!."
                 imageSrc="/images/pdf-to-summary.png"
                 sectionNumber={1}
                 link="/pdf-to-summary"
+                buttonName="Summary"
               />
               <FeatureCard
-                title="Generate Mindmap to visualise key concepts and their relationships"
-                description="Unveil the essence of any document with a click – Generate insightful summaries from PDFs effortlessly!."
-                imageSrc="/images/pdf-to-summary.png"
+                title="Mind Map Generation:"
+                description="Visualize Your Thoughts - Transform PDFs into Dynamic Mind Maps!"
+                imageSrc="/images/mindmap.jpg"
                 sectionNumber={1}
                 link="/mindmap"
+                buttonName="Mind Map"
               />
               <FeatureCard
-                title="Generate questionaire to test your knowledge about the Topic"
-                description="Unveil the essence of any document with a click – Generate insightful summaries from PDFs effortlessly!."
+                title="Image Analyzer:"
+                description="Unlock Visual Insights - Extract Meaningful Data from PDF Images with Ease!"
+                imageSrc="/images/pdf-to-summary.png"
+                sectionNumber={1}
+                link="/GeminiProVision"
+                buttonName="Analyze image"
+              />
+              <FeatureCard
+                title="Questionaire from PDFs: "
+                description="Interactive Learning Made Simple - Convert PDF Content into Engaging Questionnaires!"
                 imageSrc="/images/pdf-to-summary.png"
                 sectionNumber={1}
                 link="/questionaire"
+                buttonName="Questionaire"
               />
             </div>
           </div>
@@ -87,7 +98,7 @@ export default function Component() {
 }
 import { Link } from "react-router-dom";
 
-function FeatureCard({ title, description, imageSrc, link, sectionNumber }) {
+function FeatureCard({ title, description, imageSrc, link, sectionNumber , buttonName}) {
   const isTextOnLeft = sectionNumber % 2 === 1;
 
   return (
@@ -99,10 +110,9 @@ function FeatureCard({ title, description, imageSrc, link, sectionNumber }) {
               <h3 className={styles["feature-title"]}>{title}</h3>
               <p className={styles["feature-description"]}>{description}</p>
               <span>
-
-              <Link to={link} className={styles["summary-btn"]}>
-                Summary
-              </Link>
+                <Link to={link} className={styles["card-btn"]}>
+                  {buttonName}
+                </Link>
               </span>
             </div>
             <img

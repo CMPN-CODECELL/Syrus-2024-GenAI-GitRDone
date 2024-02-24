@@ -124,7 +124,8 @@
   border-radius: 10%;
 }
 
-.summary-btn{
+.card-btn{
+  margin: 20px;
   background-color: #0056b3;
   padding: 5px;
   margin: 5px;

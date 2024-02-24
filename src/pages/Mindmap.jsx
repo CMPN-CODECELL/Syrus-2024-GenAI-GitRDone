@@ -18,7 +18,7 @@ function Mindmap() {
   useEffect(() => {
     console.log(topics, "hello");
   }, [topics]);
-  const handleFileChange = (event) => {
+  const handleFileChange = (event) => { 
     setFile(event.target.files[0]);
     setPdfText("");
     setTopics([]);
@@ -80,7 +80,7 @@ function Mindmap() {
         `,
         },
       ],
-      max_tokens: 350,
+      max_tokens: 450,
       temperature: 0.7,
     };
 
@@ -90,7 +90,7 @@ function Mindmap() {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer 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", // Replace with your OpenAI API key
+            "Bearer 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", // Replace with your OpenAI API key
         },
         body: JSON.stringify(requestData),
       });
